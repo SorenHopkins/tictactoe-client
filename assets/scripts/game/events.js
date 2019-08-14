@@ -6,6 +6,7 @@ const store = require('./../store.js')
 const updateTile = event => {
   const data = $(event.target).data('tilenum')
   store.currentTile = data
+  store.currentGame.cells[data - 1] = store.currentPlayer
   console.log(data)
   if ($(event.target).hasClass('clicked')) {
     console.log('already clicked')

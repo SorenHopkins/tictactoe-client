@@ -1,4 +1,5 @@
 const store = require('./../store.js')
+const api = require('./api.js')
 
 const failure = function () {
   console.log('failure ran')
@@ -8,6 +9,7 @@ const createGame = function (responseData) {
   store.currentPlayer = 'x'
   store.currentGame = responseData.game
   $('.tttTile').text('')
+  $('.tttTile').removeClass('clicked')
 }
 
 const updateTile = function () {
@@ -18,6 +20,9 @@ const updateTile = function () {
     store.currentPlayer = 'x'
   }
   $('#' + store.currentTile).addClass('clicked')
+  const checkWin = api.show()
+  console.log(checkWin)
+  console.log(store.currentGame)
 }
 
 module.exports = {

@@ -15,7 +15,7 @@ const index = function () {
 
 const show = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + formData.game.id,
+    url: config.apiUrl + '/games/' + store.currentGame.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -23,11 +23,33 @@ const show = function (formData) {
   })
 }
 
+const checkWin = function (one, two, three) {
+  if (one === two && two === three && one !== '') {
+    return true
+  }
+}
+
 const update = data => {
-  console.log(store)
-  console.log(store.currentGame)
-  console.log(store.currentPlayer)
-  console.log(data)
+  const checker = store.currentGame.cells
+  if (checkWin(checker[0], checker[1], checker[2])) {
+    store.currentGame.over = true
+  } else if (checkWin(checker[0], checker[1], checker[2])) {
+    store.currentGame.over = true
+  } else if (checkWin(checker[0], checker[4], checker[8])) {
+    store.currentGame.over = true
+  } else if (checkWin(checker[0], checker[3], checker[6])) {
+    store.currentGame.over = true
+  } else if (checkWin(checker[1], checker[4], checker[7])) {
+    store.currentGame.over = true
+  } else if (checkWin(checker[2], checker[5], checker[8])) {
+    store.currentGame.over = true
+  } else if (checkWin(checker[2], checker[4], checker[6])) {
+    store.currentGame.over = true
+  } else if (checkWin(checker[3], checker[4], checker[5])) {
+    store.currentGame.over = true
+  } else if (checkWin(checker[6], checker[7], checker[8])) {
+    store.currentGame.over = true
+  }
   return $.ajax({
     url: config.apiUrl + 'games/' + store.currentGame.id,
     method: 'PATCH',
@@ -37,8 +59,8 @@ const update = data => {
     data: {
       game: {
         cell: {
-          index: data,
-          value: store.currentplayer
+          index: (data - 1),
+          value: '' + store.currentPlayer
         },
         over: store.currentGame.over
       }
