@@ -22,6 +22,7 @@ const signInSuccess = function (responseData) {
   $('#message').text(`API token: ${responseData.user.token} `)
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#loginpage', '#main').toggleClass('hidden')
   console.log('signInSuccess ran')
   console.log(responseData)
 }
@@ -30,6 +31,7 @@ const signOutSuccess = function () {
   $('#message').text(`Successful sign out`)
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#loginpage', '#main').toggleClass('hidden')
   console.log('signOutSuccess ran')
 }
 

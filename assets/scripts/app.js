@@ -11,6 +11,6 @@ $(() => {
   // your JS code goes here
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#tttTile').on('click', gameEvents.updateTile)
+  $('.tttTile').on('click', gameEvents.updateTile)
   $('#newgame').on('click', gameEvents.createGame)
 })
