@@ -13,5 +13,34 @@
     </head>
     <body>
       <h1>Browser Template</h1>
+      <div class="loginpage container">
+        <form id='sign-up' class='border'>
+          <fieldset>
+            <legend>Sign up!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+        <form id='sign-in' class='border'>
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="sign in!">
+          </fieldset>
+        </form>
+      </div>
+      <div id="gamebody" class="container">
+
+      </div>
+    <div class="newgame container">
+      <div class="box">
+        <button id="newgame" type="button" class="btn btn-primary">
+          New Game!
+        </button>
+      </div>
+    </div>
     </body>
 </html>
