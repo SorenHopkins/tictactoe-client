@@ -21,3 +21,8 @@ body {
 .alt-color {
   background-color: $alt-color;
 }
+
+.hidden {
+  display: none;
+  visibility: none;
+}

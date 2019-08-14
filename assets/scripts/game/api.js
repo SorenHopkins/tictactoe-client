@@ -24,13 +24,25 @@ const show = function (formData) {
 }
 
 const update = data => {
+  console.log(store)
+  console.log(store.currentGame)
+  console.log(store.currentPlayer)
+  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/games/' + data.game.id,
+    url: config.apiUrl + 'games/' + store.currentGame.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {
+      game: {
+        cell: {
+          index: data,
+          value: store.currentplayer
+        },
+        over: store.currentGame.over
+      }
+    }
   })
 }
 

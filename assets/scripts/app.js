@@ -13,4 +13,5 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('.tttTile').on('click', gameEvents.updateTile)
   $('#newgame').on('click', gameEvents.createGame)
+  $('#signout').on('click', authEvents.onSignOut)
 })
