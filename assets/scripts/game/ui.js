@@ -2,7 +2,6 @@ const store = require('./../store.js')
 const api = require('./api.js')
 
 const failure = function () {
-  console.log('failure ran')
 }
 
 const createGame = function (responseData) {
@@ -34,12 +33,9 @@ const updateTile = function () {
     store.draw = false
   }
   const checkWin = api.show()
-  console.log(checkWin)
-  console.log(store.currentGame)
 }
 
 const getGameIndex = function (returnData) {
-  console.log(returnData)
   store.totalGames = returnData.games.length
   $('#gamesowon').text('O has won: ' + store.oWins + ' games (this session)')
   $('#gamesxwon').text('X has won: ' + store.xWins + ' games (this session)')

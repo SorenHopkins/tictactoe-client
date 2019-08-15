@@ -7,14 +7,12 @@ const signUpSuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('.reset')[0].reset()
-  console.log('Success ran')
 }
 
 const passwordChangeSuccess = function () {
   $('#message').text('Successful change pw')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('Success ran')
 }
 
 const signInSuccess = function (responseData) {
@@ -27,8 +25,6 @@ const signInSuccess = function (responseData) {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('.reset').trigger('reset')
-  console.log('signInSuccess ran')
-  console.log(responseData)
 }
 
 const signOutSuccess = function () {
@@ -36,14 +32,12 @@ const signOutSuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#loginpage, #main, #navbar').toggleClass('hidden')
-  console.log('signOutSuccess ran')
 }
 
 const failure = function () {
   $('#message').text('Event failed')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('failure ran')
 }
 
 module.exports = {

@@ -7,9 +7,7 @@ const updateTile = event => {
   const data = $(event.target).data('tilenum')
   store.currentTile = data
   store.currentGame.cells[data - 1] = store.currentPlayer
-  console.log(data)
   if ($(event.target).hasClass('clicked')) {
-    console.log('already clicked')
     $('#errormessage').text('That tile has already been played!')
   } else {
     $('#errormessage').text('')
