@@ -7,6 +7,7 @@ const failure = function () {
 
 const createGame = function (responseData) {
   store.currentPlayer = 'x'
+  $('#currentplayer').text('Current Player: x')
   store.currentGame = responseData.game
   $('.tttTile').text('')
   $('.tttTile').removeClass('clicked')
@@ -16,8 +17,10 @@ const updateTile = function () {
   $('#' + store.currentTile).text(store.currentPlayer)
   if (store.currentPlayer === 'x') {
     store.currentPlayer = 'o'
+    $('#currentplayer').text('Current Player: o')
   } else {
     store.currentPlayer = 'x'
+    $('#currentplayer').text('Current Player: x')
   }
   $('#' + store.currentTile).addClass('clicked')
   if (store.currentGame.over === true && store.draw === false) {
@@ -33,8 +36,17 @@ const updateTile = function () {
   console.log(store.currentGame)
 }
 
+const getGameIndex = function (returnData) {
+  console.log(returnData)
+  store.totalGames = returnData.games.length
+  $('#gamesowon').text('O has won: ' + store.oWins + ' games (this session)')
+  $('#gamesxwon').text('X has won: ' + store.xWins + ' games (this session)')
+  $('#gamesplayedstats').text('You have played ' + store.totalGames + ' games in total')
+}
+
 module.exports = {
   createGame,
   updateTile,
+  getGameIndex,
   failure
 }

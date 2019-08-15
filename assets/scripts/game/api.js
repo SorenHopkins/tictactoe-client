@@ -3,7 +3,7 @@
 const config = require('./../config.js')
 const store = require('./../store.js')
 
-const index = function () {
+const gameIndex = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
@@ -53,6 +53,13 @@ const update = data => {
     store.currentGame.over = true
     store.draw = true
   }
+
+  if (store.currentPlayer === 'x' && store.currentGame.over === true) {
+    store.xWins = store.xWins + 1
+  } else if (store.currentPlayer === 'o' && store.currentGame.over === true) {
+    store.oWins = store.oWins + 1
+  }
+
   return $.ajax({
     url: config.apiUrl + 'games/' + store.currentGame.id,
     method: 'PATCH',
@@ -83,7 +90,7 @@ const createGame = formData => {
 }
 
 module.exports = {
-  index,
+  gameIndex,
   show,
   update,
   createGame

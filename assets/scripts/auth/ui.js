@@ -20,6 +20,8 @@ const passwordChangeSuccess = function () {
 const signInSuccess = function (responseData) {
   // handle storing user token, if extant
   store.user = responseData.user
+  store.xWins = 0
+  store.oWins = 0
   $('#loginpage, #main, #navbar').toggleClass('hidden')
   $('#message').text(`API token: ${responseData.user.token} `)
   $('#message').removeClass()

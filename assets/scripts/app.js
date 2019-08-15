@@ -14,4 +14,5 @@ $(() => {
   $('.tttTile').on('click', gameEvents.updateTile)
   $('#newgame').on('click', gameEvents.createGame)
   $('#signout').on('click', authEvents.onSignOut)
+  $('.navbar-toggler').on('click', gameEvents.getGameIndex)
 })
