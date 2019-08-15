@@ -6,8 +6,8 @@ const failure = function () {
 }
 
 const createGame = function (responseData) {
-  store.currentPlayer = 'x'
-  $('#currentplayer').text('Current Player: x')
+  store.currentPlayer = 'X'
+  $('#currentplayer').text('Current Player: X')
   store.currentGame = responseData.game
   $('.tttTile').text('')
   $('.tttTile').removeClass('clicked')
@@ -15,19 +15,21 @@ const createGame = function (responseData) {
 
 const updateTile = function () {
   $('#' + store.currentTile).text(store.currentPlayer)
-  if (store.currentPlayer === 'x') {
-    store.currentPlayer = 'o'
-    $('#currentplayer').text('Current Player: o')
+  if (store.currentPlayer === 'X') {
+    store.currentPlayer = 'O'
+    $('#currentplayer').text('Current Player: O')
   } else {
-    store.currentPlayer = 'x'
-    $('#currentplayer').text('Current Player: x')
+    store.currentPlayer = 'X'
+    $('#currentplayer').text('Current Player: X')
   }
   $('#' + store.currentTile).addClass('clicked')
   if (store.currentGame.over === true && store.draw === false) {
-    alert('You won! Please start a new game.')
+    $('#messageBody').text('You won! Please start a new game.')
+    $('#messageModal').modal('show')
     $('.tttTile').addClass('clicked')
   } else if (store.currentGame.over === true && store.draw === true) {
-    alert('You drawed! Please start a new game.')
+    $('#messageBody').text('You drawed! Please start a new game.')
+    $('#messageModal').modal('show')
     $('.tttTile').addClass('clicked')
     store.draw = false
   }

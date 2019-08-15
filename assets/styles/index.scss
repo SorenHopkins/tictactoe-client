@@ -1,4 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap');
+
 
 $alt-color: $cyan;
 $body-bg-color: $gray-200;
@@ -34,8 +36,9 @@ li {
 .tttTile {
   width: 20vw;
   height: 20vw;
-  font-size: 40px;
-  font-weight: 800;
+  font-size: 10vw;
+  font-weight: 400;
+  font-family: 'Homemade Apple', cursive;
 }
 
 .sign {
