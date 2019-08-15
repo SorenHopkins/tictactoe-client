@@ -15,4 +15,5 @@ $(() => {
   $('#newgame').on('click', gameEvents.createGame)
   $('#signout').on('click', authEvents.onSignOut)
   $('.navbar-toggler').on('click', gameEvents.getGameIndex)
+  $('#change-pw').on('submit', authEvents.onChangePassword)
 })
