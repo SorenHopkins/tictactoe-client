@@ -49,6 +49,9 @@ const update = data => {
     store.currentGame.over = true
   } else if (checkWin(checker[6], checker[7], checker[8])) {
     store.currentGame.over = true
+  } else if (checker.includes('') === false) {
+    store.currentGame.over = true
+    store.draw = true
   }
   return $.ajax({
     url: config.apiUrl + 'games/' + store.currentGame.id,

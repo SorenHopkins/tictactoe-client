@@ -18,6 +18,7 @@ const updateTile = event => {
 }
 
 const createGame = event => {
+  store.draw = false
   api.createGame()
     .then(ui.createGame)
     .catch(ui.failure)

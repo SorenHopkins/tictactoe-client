@@ -20,9 +20,13 @@ const updateTile = function () {
     store.currentPlayer = 'x'
   }
   $('#' + store.currentTile).addClass('clicked')
-  if (store.currentGame.over === true) {
+  if (store.currentGame.over === true && store.draw === false) {
     alert('You won! Please start a new game.')
     $('.tttTile').addClass('clicked')
+  } else if (store.currentGame.over === true && store.draw === true) {
+    alert('You drawed! Please start a new game.')
+    $('.tttTile').addClass('clicked')
+    store.draw = false
   }
   const checkWin = api.show()
   console.log(checkWin)

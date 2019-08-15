@@ -8,18 +8,55 @@ body {
   background-color: $body-bg-color;
 }
 
+fieldset {
+  text-align: center;
+}
+
+input {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
 .box {
   align-items: center;
   background-color: $secondary;
   border: 1px solid $white;
   color: $font-color;
   display: flex;
-  height: 80px;
   justify-content: center;
+}
+
+.tttTile {
+  width: 20vw;
+  height: 20vw;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.sign {
+  padding: 40px 10px;
+  margin: 20px;
+  background-color: lightblue;
 }
 
 .alt-color {
   background-color: $alt-color;
+}
+
+.bottomcontainer {
+  flex-direction: column;
+  justify-content: center;
+}
+
+p {
+  padding: 10px;
+  text-align: center;
+}
+
+#newgame {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .hidden {

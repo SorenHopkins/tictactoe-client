@@ -11,28 +11,47 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+      <nav id="navbar" class="navbar navbar-dark bg-dark hidden">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li>
+              <button id="signout" type="button" class="btn btn-primary">
+                Sign out
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div id="loginpage" class="container">
-        <form id='sign-up' class='border'>
+        <form id='sign-up' class='border sign reset'>
           <fieldset>
             <legend>Sign up!</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-            <input type="submit" value="Sign up!">
+            <input type="text" name="credentials[email]" placeholder="Email" class="reset">
+            <input type="password" name="credentials[password]" placeholder="Password" class="reset">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" class="reset">
+            <input type="submit" value="Sign up!" class="btn btn-primary">
           </fieldset>
         </form>
-        <form id='sign-in' class='border'>
-          <fieldset>
+        <form id='sign-in' class='border sign reset'>
+          <fieldset class='signin'>
             <legend>Sign in!</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="submit" value="sign in!">
+            <div>
+              <input type="text" name="credentials[email]" placeholder="Email" class="reset">
+              <input type="password" name="credentials[password]" placeholder="Password" class="reset">
+            </div>
+            <input type="submit" value="sign in!" class="btn btn-primary">
           </fieldset>
         </form>
       </div>
       <div id="main" class="hidden">
+        <br>
         <div id="gamebody" class="container">
           <div class="row">
             <div id="1" data-tilenum="1" class="col-4 box alt-color tttTile"></div>
@@ -46,16 +65,15 @@
             <div id="9" data-tilenum="9" class="col-4 box alt-color tttTile"></div>
           </div>
         </div>
-    <div class="newgame container">
-      <div class="box">
-        <button id="newgame" type="button" class="btn btn-primary">
-          New Game!
-        </button>
+        <br>
+      <div class="newgame container">
+        <div class="box bottomcontainer">
+          <p>Tic-tac-toe (American English), noughts and crosses (British English), or Xs and Os is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.</p>
+          <button id="newgame" type="button" class="btn btn-primary">
+            New Game!
+          </button>
+        </div>
       </div>
-    </div>
-    <button id="signout" type="button" class="btn btn-primary">
-      Sign out
-    </button>
   </div>
     </body>
 </html>

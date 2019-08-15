@@ -6,6 +6,7 @@ const signUpSuccess = function () {
   $('#message').text('Successful sign up')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('.reset')[0].reset()
   console.log('Success ran')
 }
 
@@ -19,10 +20,11 @@ const passwordChangeSuccess = function () {
 const signInSuccess = function (responseData) {
   // handle storing user token, if extant
   store.user = responseData.user
-  $('#loginpage, #main').toggleClass('hidden')
+  $('#loginpage, #main, #navbar').toggleClass('hidden')
   $('#message').text(`API token: ${responseData.user.token} `)
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('.reset').trigger('reset')
   console.log('signInSuccess ran')
   console.log(responseData)
 }
@@ -31,7 +33,7 @@ const signOutSuccess = function () {
   $('#message').text(`Successful sign out`)
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('#loginpage, #main').toggleClass('hidden')
+  $('#loginpage, #main, #navbar').toggleClass('hidden')
   console.log('signOutSuccess ran')
 }
 
