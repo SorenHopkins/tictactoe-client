@@ -10,7 +10,7 @@ const onSignUp = function (event) {
 
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .catch(ui.failure)
+    .catch(ui.signUpFailure)
 }
 
 const onSignIn = function (event) {
@@ -19,7 +19,7 @@ const onSignIn = function (event) {
 
   api.signIn(data)
     .then(ui.signInSuccess)
-    .catch(ui.failure)
+    .catch(ui.signInFailure)
 }
 
 const onChangePassword = function (event) {

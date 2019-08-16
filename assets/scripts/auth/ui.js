@@ -6,7 +6,7 @@ const signUpSuccess = function () {
   $('#message').text('Successful sign up')
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('.reset')[0].reset()
+  $('.reset').trigger('reset')
 }
 
 const passwordChangeSuccess = function () {
@@ -34,6 +34,16 @@ const signOutSuccess = function () {
   $('#loginpage, #main, #navbar').toggleClass('hidden')
 }
 
+const signUpFailure = function () {
+  $('#messageBody').text('Please check that your username is not taken & your passwords match.')
+  $('#messageModal').modal('show')
+}
+
+const signInFailure = function () {
+  $('#messageBody').text('Please make sure that your username & password is correct.')
+  $('#messageModal').modal('show')
+}
+
 const failure = function () {
   $('#message').text('Event failed')
   $('#message').removeClass()
@@ -45,5 +55,7 @@ module.exports = {
   failure,
   signInSuccess,
   passwordChangeSuccess,
-  signOutSuccess
+  signOutSuccess,
+  signUpFailure,
+  signInFailure
 }
