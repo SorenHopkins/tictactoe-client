@@ -45,6 +45,7 @@ const getGameIndex = function (returnData) {
   $('#gamesowon').text('O has won: ' + store.oWins + ' games (this session)')
   $('#gamesxwon').text('X has won: ' + store.xWins + ' games (this session)')
   $('#gamesplayedstats').text('You have played ' + store.totalGames + ' games in total')
+  $('#statsModal').modal('show')
 }
 
 module.exports = {
