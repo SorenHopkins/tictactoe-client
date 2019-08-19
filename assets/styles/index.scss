@@ -1,5 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap');
 
 
 $alt-color: $cyan;
@@ -30,21 +30,28 @@ li {
   border: 1px solid $white;
   color: $font-color;
   display: flex;
-  justify-content: center;
+  justify-content: center space-between;
 }
 
 .tttTile {
-  width: 20vw;
-  height: 20vw;
+  width: 23vw;
+  height: 23vw;
+  margin: 0.5vw auto;
   font-size: 10vw;
-  font-weight: 400;
-  font-family: 'Homemade Apple', cursive;
+  font-weight: 600;
+  font-family: 'Reenie Beanie', cursive;
+  transition: background 1s;
+}
+
+.tttTile:hover {
+  background-color: #cde8c1;
 }
 
 .sign {
   padding: 40px 10px;
   margin: 20px;
   background-color: lightblue;
+  border: solid;
 }
 
 .alt-color {
