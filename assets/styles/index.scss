@@ -9,6 +9,8 @@ $font-color: $light;
 
 body {
   background-color: $body-bg-color;
+  background-image: url("https://storage.needpix.com/rsynced_images/geometric-pattern-3d-blocks.jpg");
+  background-color: (0,0,0,.5);
 }
 
 fieldset {
@@ -51,6 +53,7 @@ li {
   font-weight: 600;
   font-family: 'Reenie Beanie', cursive;
   transition: background 1s;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .tttTile:hover {
@@ -61,6 +64,7 @@ li {
   padding: 40px 10px;
   margin: 20px;
   background-color: lightblue;
+  box-shadow: inset 0 0 10px #000000;
 }
 
 .alt-color {
