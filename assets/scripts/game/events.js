@@ -4,16 +4,20 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 const store = require('./../store.js')
 
 const updateTile = event => {
-  const data = $(event.target).data('tilenum')
-  store.currentTile = data
-  store.currentGame.cells[data - 1] = store.currentPlayer
-  if ($(event.target).hasClass('clicked')) {
-    $('#errormessage').text('That tile has already been played!')
+  if (!store.currentGame) {
+    ui.errorClick()
   } else {
-    $('#errormessage').text('')
-    api.update(data)
-      .then(ui.updateTile)
-      .catch(ui.failure)
+    const data = $(event.target).data('tilenum')
+    store.currentTile = data
+    store.currentGame.cells[data - 1] = store.currentPlayer
+    if ($(event.target).hasClass('clicked')) {
+      $('#errormessage').text('That tile has already been played!')
+    } else {
+      $('#errormessage').text('')
+      api.update(data)
+        .then(ui.updateTile)
+        .catch(ui.failure)
+    }
   }
 }
 

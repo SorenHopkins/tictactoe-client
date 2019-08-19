@@ -4,6 +4,11 @@ const api = require('./api.js')
 const failure = function () {
 }
 
+const errorClick = function () {
+  $('#messageBody').text('Please start a new game.')
+  $('#messageModal').modal('show')
+}
+
 const createGame = function (responseData) {
   store.currentPlayer = 'X'
   $('#currentplayer').text('Current Player: X')
@@ -52,5 +57,6 @@ module.exports = {
   createGame,
   updateTile,
   getGameIndex,
-  failure
+  failure,
+  errorClick
 }

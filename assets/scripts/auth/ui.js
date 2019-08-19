@@ -31,6 +31,8 @@ const signOutSuccess = function () {
   $('#message').text(`Successful sign out`)
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('.tttTile').text('')
+  delete store.currentGame
   $('#loginpage, #main, #navbar').toggleClass('hidden')
 }
 
