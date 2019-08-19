@@ -16,40 +16,67 @@
 
     <body>
       <nav id="navbar" class="navbar navbar-dark bg-dark hidden">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li>
-              <button id="signout" type="button" class="btn btn-primary">
+        <a class="navbar-brand" href="#">Noughts & Crosses</a>
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+              <button id="signout" type="button" class="btn btn-primary btn-sm">
                 Sign out
               </button>
-            </li>
-            <li id="gamesplayedstats">
-            </li>
-            <li id="gamesxwon">
-            </li>
-            <li id="gamesowon">
-            </li>
-            <li>
-              <form id='change-pw' class='border sign reset'>
-                <fieldset class='change-pw'>
-                  <legend>Change your PW!</legend>
-                  <div>
-                    <input type="password" name="passwords[old]" placeholder="Old Password" class="reset">
-                    <input type="password" name="passwords[new]" placeholder="New Password" class="reset">
-                  </div>
-                  <input type="submit" value="Change PW!" class="btn btn-primary">
-                </fieldset>
-              </form>
-            </li>
-          </ul>
-        </div>
+            <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle statistics" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Statistics
+            </button>
+              <div class="dropdown-menu dropdown-menu-right statsText" aria-labelledby="dropdownMenuButton">
+                <ul>
+                  <li id="gamesplayedstats" class="statsText">
+                  </li>
+                  <li id="gamesxwon" class="statsText">
+                  </li>
+                  <li id="gamesowon" class="statsText">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Change Password
+              </button>
+              <!-- <div class="dropdown-menu">
+                <form id='change-pw' class='border form-inline reset'>
+                  <fieldset class='change-pw'>
+                    <legend>Change your PW!</legend>
+                    <div>
+                      <input type="password" name="passwords[old]" placeholder="Old Password" class="reset">
+                      <input type="password" name="passwords[new]" placeholder="New Password" class="reset">
+                    </div>
+                    <input type="submit" value="Change PW!" class="btn btn-outline-success">
+                  </fieldset>
+                </form>
+                </div> -->
+                <div class="dropdown-menu dropdown-menu-right">
+                  <form id='change-pw' class="px-4 py-3 reset">
+                    <div class="form-group">
+                      <label for="exampleDropdownFormEmail1">Old Password</label>
+                      <input type="password" name="passwords[old]" placeholder="Old Password" class="reset">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleDropdownFormPassword1">New Password</label>
+                      <input type="password" name="passwords[new]" placeholder="New Password" class="reset">
+                    </div>
+                    <input type="submit" value="Change PW!" class="btn btn-outline-success">
+                  </form>
+                </div>
+              </div>
+
+            </div>
+        <!-- </div> -->
       </nav>
       <div id="loginpage" class="container">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Wait!</strong> This is a toy application. Please do not use real passwords or emails!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
         <form id='sign-up' class='border sign reset'>
           <fieldset>
             <legend>Sign up!</legend>

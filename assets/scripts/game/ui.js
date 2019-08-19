@@ -23,8 +23,14 @@ const updateTile = function () {
   }
   $('#' + store.currentTile).addClass('clicked')
   if (store.currentGame.over === true && store.draw === false) {
-    $('#messageBody').text('You won! Please start a new game.')
-    $('#messageModal').modal('show')
+    if (store.currentPlayer === 'O') {
+      $('#messageBody').text('X won! Please start a new game.')
+      $('#messageModal').modal('show')
+    } else {
+      $('#messageBody').text('O won! Please start a new game.')
+      $('#messageModal').modal('show')
+    }
+
     $('.tttTile').addClass('clicked')
   } else if (store.currentGame.over === true && store.draw === true) {
     $('#messageBody').text('You drawed! Please start a new game.')
@@ -32,7 +38,6 @@ const updateTile = function () {
     $('.tttTile').addClass('clicked')
     store.draw = false
   }
-  const checkWin = api.show()
 }
 
 const getGameIndex = function (returnData) {
