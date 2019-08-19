@@ -1,4 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
+
 @import url('https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap');
 
 
@@ -30,13 +31,22 @@ li {
   border: 1px solid $white;
   color: $font-color;
   display: flex;
-  justify-content: center space-between;
+  justify-content: center;
+}
+
+#gamebody {
+  width: 50vmin;
+  height: 50vmin;
+  margin: auto;
+}
+
+.row {
+  height: 100%;
 }
 
 .tttTile {
-  width: 23vw;
-  height: 23vw;
-  margin: 0.5vw auto;
+  height: calc(100% /3);
+  border: 1px solid white;
   font-size: 10vw;
   font-weight: 600;
   font-family: 'Reenie Beanie', cursive;
@@ -51,7 +61,6 @@ li {
   padding: 40px 10px;
   margin: 20px;
   background-color: lightblue;
-  border: solid;
 }
 
 .alt-color {
