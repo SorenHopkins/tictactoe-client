@@ -3,9 +3,8 @@
 const store = require('./../store.js')
 
 const signUpSuccess = function () {
-  $('#message').text('Successful sign up')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#messageBody').text('You have signed up!')
+  $('#messageModal').modal('show')
   $('.reset').trigger('reset')
 }
 
