@@ -57,7 +57,7 @@ const failure = function () {
 }
 
 const changePasswordFailure = function () {
-  $('#messageBody').text('Your passwords do not match!')
+  $('#messageBody').text('Please make sure that you have entered your old password correctly.')
   $('#messageModal').modal('show')
   $('.reset').trigger('reset')
 }
