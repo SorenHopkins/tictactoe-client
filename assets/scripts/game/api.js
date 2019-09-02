@@ -54,9 +54,9 @@ const update = data => {
     store.draw = true
   }
 
-  if (store.currentPlayer === 'X' && store.currentGame.over === true) {
+  if (store.currentPlayer === 'X' && store.currentGame.over === true && store.draw === false) {
     store.xWins = store.xWins + 1
-  } else if (store.currentPlayer === 'O' && store.currentGame.over === true) {
+  } else if (store.currentPlayer === 'O' && store.currentGame.over === true && store.draw === false) {
     store.oWins = store.oWins + 1
   }
 
