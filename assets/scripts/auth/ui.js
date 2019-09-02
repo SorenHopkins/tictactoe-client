@@ -9,9 +9,9 @@ const signUpSuccess = function () {
 }
 
 const passwordChangeSuccess = function () {
-  $('#message').text('Successful change pw')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#messageBody').text('You have changed your password!')
+  $('#messageModal').modal('show')
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (responseData) {
@@ -40,17 +40,26 @@ const signOutSuccess = function () {
 const signUpFailure = function () {
   $('#messageBody').text('Please check that your username is not taken & your passwords match.')
   $('#messageModal').modal('show')
+  $('.reset').trigger('reset')
 }
 
 const signInFailure = function () {
   $('#messageBody').text('Please make sure that your username & password is correct.')
   $('#messageModal').modal('show')
+  $('.reset').trigger('reset')
 }
 
 const failure = function () {
   $('#message').text('Event failed')
   $('#message').removeClass()
   $('#message').addClass('failure')
+  $('.reset').trigger('reset')
+}
+
+const changePasswordFailure = function () {
+  $('#messageBody').text('Your passwords do not match!')
+  $('#messageModal').modal('show')
+  $('.reset').trigger('reset')
 }
 
 module.exports = {
@@ -60,5 +69,6 @@ module.exports = {
   passwordChangeSuccess,
   signOutSuccess,
   signUpFailure,
-  signInFailure
+  signInFailure,
+  changePasswordFailure
 }

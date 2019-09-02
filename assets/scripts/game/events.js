@@ -9,11 +9,13 @@ const updateTile = event => {
   } else {
     const data = $(event.target).data('tilenum')
     store.currentTile = data
-    store.currentGame.cells[data - 1] = store.currentPlayer
+
     if ($(event.target).hasClass('clicked')) {
       $('#errormessage').text('That tile has already been played!')
     } else {
       $('#errormessage').text('')
+      $('#' + store.currentTile).addClass('clicked')
+      store.currentGame.cells[data - 1] = store.currentPlayer
       api.update(data)
         .then(ui.updateTile)
         .catch(ui.failure)
